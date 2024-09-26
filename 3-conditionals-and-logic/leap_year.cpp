@@ -1,24 +1,22 @@
 #include <iostream>
 
 int main() {
-   
-  int y = 0;
   
-  std::cout << "Enter year: ";
-  std::cin >> y;
-  
-  if (y < 0 || y > 9999) {
-    
-    std::cout << "Invalid entry.\n";
-    
-  }
-  else if (y % 4 == 0 && y % 100 != 0 || y % 400 == 0) {
+  int year;
 
-    std::cout << y << " falls on a leap year.\n";
-    
+  std::cout << "Please enter the year of birth as 'xxxx': \n";
+  std::cin >> year;
+
+  if (year >= 1000 && year <= 9999) {
+    if ((year % 4 == 0) && ((year % 100 != 0) || (year % 400 == 0))) {
+      std::cout << "Year falls on a leap year\n";
+    } else {
+      std::cout << "Year does not fall on a leap year\n";
+    }
+  } else {
+    std::cout << "Invalid entry.\nPlease enter a year in the format of 'xxxx'. \n";
   }
-  else{
-  std::cout << y << " Does not fall on a leap year.\n";
-  }
-   
+  
+return 0;
+
 }
